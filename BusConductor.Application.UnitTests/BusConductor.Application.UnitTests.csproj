@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61413815-696A-4C57-AA9B-B3C36FD61136}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusConductor.Application.UnitTests</RootNamespace>
+    <AssemblyName>BusConductor.Application.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ParameterSetMappers\BookingService\AdminMakeParameterSetMapperTests.cs" />
+    <Compile Include="ServiceFactories\BookingServiceFactory.cs" />
+    <Compile Include="Implementations\BookingServiceTests.cs" />
+    <Compile Include="ParameterSetMappers\BookingService\TOGO_AltMakePendingParameterSetMapperTests.cs" />
+    <Compile Include="ParameterSetMappers\BookingService\CustomerMakeParameterSetMapperTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusConductor.Application\BusConductor.Application.csproj">
+      <Project>{343EE9CE-5DC0-4E25-859B-8DCE9AF413D2}</Project>
+      <Name>BusConductor.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusConductor.Data\BusConductor.Data.csproj">
+      <Project>{5A3EB2F3-F49B-4F28-9936-A3A36AEB605B}</Project>
+      <Name>BusConductor.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusConductor.Domain\BusConductor.Domain.csproj">
+      <Project>{C8A18468-6E53-492A-AF31-52B51F3B4535}</Project>
+      <Name>BusConductor.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucidity.Utilities.Contracts\Lucidity.Utilities.Contracts.csproj">
+      <Project>{DF5C253B-FA84-474D-9EB4-AF89EBEFD0AB}</Project>
+      <Name>Lucidity.Utilities.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

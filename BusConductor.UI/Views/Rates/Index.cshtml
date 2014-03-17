@@ -1,0 +1,25 @@
+﻿@model BusConductor.UI.ViewModels.Rates.IndexViewModel
+@{
+    ViewBag.Title = "Cool Cat Campers - Camper Rates";
+}
+<h1>Camper Rates</h1>
+<p>
+    These are sample rates for suggested booking periods. Please click on the name of
+    the camper to see details and daily rates for the specific camper.
+</p>
+<div class="rates-index">
+    @foreach (var bus in Model.Busses)
+    {
+        <div class="record">
+            <a href="@Url.Action("Details", "Bus", new { bus.BusId })" >
+                <img src="@bus.MainImageUrl" alt="@bus.Name" class="record-image"/>
+            </a>
+            <div class="record-text">
+                <h2>@bus.Name</h2>
+                @Html.Partial("_RatesTable", bus.Table)
+                
+            </div>
+            <hr />
+        </div>
+    }
+</div>

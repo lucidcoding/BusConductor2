@@ -1,0 +1,36 @@
+﻿<Page x:Class="BusConductor.Admin.UI.Views.Bus.Index"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:BusConductor.Admin.UI.ViewModels.Bus" mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	  Title="Index">
+    <Page.DataContext>
+        <local:IndexViewModel />
+    </Page.DataContext>
+
+        <ListView Name="ListViewEmployeeDetails" Grid.Row="1" Margin="4,109,12,23"  ItemsSource="{Binding Busses}"  >
+        <ListView.View>
+            <GridView x:Name="grdTest">
+                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"  Width="200" />
+                <GridViewColumn>
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                                <!--<Button Content="Edit" Command="{Binding Path=DataContext.RunCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />-->
+                            <!--<Button Content="Edit" Command="{Binding DataContext.MyTestCommand}" CommandParameter="{Binding}"/>-->
+                            <Button Content="Edit" Click="Edit_Clicked" CommandParameter="{Binding Id}"/>
+                            <!--<Button  Click="Button_Click" CommandParameter="{Binding}" />-->
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+
+            </GridView>
+        </ListView.View>
+    </ListView>
+
+
+    <!--<Grid >
+        <Label Grid.Column="0" Content="{Binding Busses[0].Name}"/>
+    </Grid>-->
+</Page>

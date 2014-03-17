@@ -1,0 +1,55 @@
+﻿@model BusConductor.UI.ViewModels.Calendar.DisplayMonthViewModel
+           
+<div class="bc-calendar" id="CalendarPlaceholder">
+    <table>
+        <tr>
+            <th colspan="7" class="header-bar">
+                <a href="@Url.RouteUrl("CalendarGet", new { year = @Model.YearOfPreviousMonth, month = @Model.MonthOfPreviousMonth, busId = @Model.BusId })" class = "previous-month" >
+                    <img src="/Content/Images/CalendarPrevious.gif" alt="Previous Month"/>
+                </a>
+                @*@Html.RouteLink("<", "CalendarGet", new { year = @Model.YearOfPreviousMonth, month = @Model.MonthOfPreviousMonth, busId = @Model.BusId }, new { @class = "previous-month" })*@
+                <span class="month-name">
+                @Model.MonthName
+                </span>
+                @*@Html.RouteLink(">", "CalendarGet", new { year = @Model.YearOfNextMonth, month = @Model.MonthOfNextMonth, busId = @Model.BusId }, new { @class = "next-month" })*@
+                <a href="@Url.RouteUrl("CalendarGet", new { year = @Model.YearOfNextMonth, month = @Model.MonthOfNextMonth, busId = @Model.BusId })" class = "next-month" >
+                    <img src="/Content/Images/CalendarNext.gif" alt="Next Month"/>
+                </a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Mon
+            </th>
+            <th>
+                Tue
+            </th>
+            <th>
+                Wed
+            </th>
+            <th>
+                Thu
+            </th>
+            <th>
+                Fri
+            </th>
+            <th>
+                Sat
+            </th>
+            <th>
+                Sun
+            </th>
+        </tr>
+        @foreach (var week in Model.Weeks)
+        {
+            <tr>
+                @foreach (var day in week.Days)
+                {
+                    <td class="@day.AdditionalClass">
+                        @day.Date.Day
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+</div>

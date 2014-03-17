@@ -1,0 +1,136 @@
+﻿<Page x:Class="BusConductor.Admin.UI.Views.Bus.Edit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:BusConductor.Admin.UI.ViewModels.Bus"
+      xmlns:System="clr-namespace:System;assembly=mscorlib"
+      xmlns:Enumerations="clr-namespace:BusConductor.Domain.Enumerations;assembly=BusConductor.Domain"
+	Title="Details">
+    <Page.Resources>
+            <ObjectDataProvider x:Key="DriveSideOptions" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="Enumerations:DriveSide"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:EditViewModel />
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Name" />
+        <TextBox Grid.Row="0" Grid.Column="1" Name="Name" Text="{Binding Path=Name}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Description" />
+        <TextBox Grid.Row="1" Grid.Column="1" Name="Description" Text="{Binding Path=Description}" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Overview" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="Overview" Text="{Binding Path=Overview}" TextWrapping="Wrap" Height="100"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Details" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="Details" Text="{Binding Path=Details}" TextWrapping="Wrap" Height="100"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Drive Side" />
+        <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Source={StaticResource DriveSideOptions}}" SelectedItem="{Binding Path=DriveSide}" Width="100" HorizontalAlignment="Left" />
+        <Label Grid.Row="5" Grid.Column="0" Content="Year" />
+        <TextBox Grid.Row="5" Grid.Column="1" Name="Year" Text="{Binding Path=Year}" Width="100" HorizontalAlignment="Left" />
+        <ListView Grid.Row="6" Grid.ColumnSpan="2" Name="ListViewPricingPeriods" ItemsSource="{Binding PricingPeriods}"  >
+            <ListView.View>
+                <GridView x:Name="PricingPeriodsGrid">
+                    <GridViewColumn Header="Start Month" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox  SelectedValuePath="Tag" SelectedValue="{Binding StartMonth}">
+                                    <ComboBoxItem Tag="1">Jan</ComboBoxItem>
+                                    <ComboBoxItem Tag="2">Feb</ComboBoxItem>
+                                    <ComboBoxItem Tag="3">Mar</ComboBoxItem>
+                                    <ComboBoxItem Tag="4">Apr</ComboBoxItem>
+                                    <ComboBoxItem Tag="5">May</ComboBoxItem>
+                                    <ComboBoxItem Tag="6">Jun</ComboBoxItem>
+                                    <ComboBoxItem Tag="7">Jul</ComboBoxItem>
+                                    <ComboBoxItem Tag="8">Aug</ComboBoxItem>
+                                    <ComboBoxItem Tag="9">Sep</ComboBoxItem>
+                                    <ComboBoxItem Tag="10">Oct</ComboBoxItem>
+                                    <ComboBoxItem Tag="11">Nov</ComboBoxItem>
+                                    <ComboBoxItem Tag="12">Dec</ComboBoxItem>
+                                </ComboBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Start Day" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Name="StartDay" Text="{Binding StartDay}" Width="20"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="End Month" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox  SelectedValuePath="Tag" SelectedValue="{Binding EndMonth}">
+                                    <ComboBoxItem Tag="1">Jan</ComboBoxItem>
+                                    <ComboBoxItem Tag="2">Feb</ComboBoxItem>
+                                    <ComboBoxItem Tag="3">Mar</ComboBoxItem>
+                                    <ComboBoxItem Tag="4">Apr</ComboBoxItem>
+                                    <ComboBoxItem Tag="5">May</ComboBoxItem>
+                                    <ComboBoxItem Tag="6">Jun</ComboBoxItem>
+                                    <ComboBoxItem Tag="7">Jul</ComboBoxItem>
+                                    <ComboBoxItem Tag="8">Aug</ComboBoxItem>
+                                    <ComboBoxItem Tag="9">Sep</ComboBoxItem>
+                                    <ComboBoxItem Tag="10">Oct</ComboBoxItem>
+                                    <ComboBoxItem Tag="11">Nov</ComboBoxItem>
+                                    <ComboBoxItem Tag="12">Dec</ComboBoxItem>
+                                </ComboBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="End Day" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Name="EndDay" Text="{Binding EndDay}" Width="20" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Fri - Fri" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Name="FridayToFridayRate" Text="{Binding FridayToFridayRate, StringFormat='####0.00'}" Width="70" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Fri - Mon" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Name="FridayToMondayRate" Text="{Binding FridayToMondayRate, StringFormat='####0.00'}" Width="70" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Mon - Fri" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Name="MondayToFridayRate" Text="{Binding MondayToFridayRate, StringFormat='####0.00'}" Width="70" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="8" Grid.ColumnSpan="2" Content="Add Pricing Period" Click="AddPricingPeriod_Click" Width="150" HorizontalAlignment="Left" />
+        <Button Grid.Row="9" Grid.ColumnSpan="2" Content="Save" Click="Save_Clicked" Width="100" HorizontalAlignment="Left" />
+        
+    </Grid>
+</Page>

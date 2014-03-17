@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F750D8E-92C0-40E1-998A-C7440FC8FD17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusConductor.Domain.UnitTests</RootNamespace>
+    <AssemblyName>BusConductor.Domain.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\BookingTests\AdminMakeWithBookingNumberTests.cs" />
+    <Compile Include="Entities\BookingTests\ValidateAdminMakeTests.cs" />
+    <Compile Include="Entities\BusTests\GetBookingStatusForTests.cs" />
+    <Compile Include="Entities\BusTests\GetConflictingBookingsTests.cs" />
+    <Compile Include="Entities\BookingTests\ValidateCustomerMakeTests.cs" />
+    <Compile Include="Entities\BusTests\GetRateForTests.cs" />
+    <Compile Include="Entities\BusTests\GetSampleRateTests.cs" />
+    <Compile Include="Entities\BusTests\GetUndiscountedRateForTests.cs" />
+    <Compile Include="Entities\BookingTests\CustomerMakeWithBookingNumberTests.cs" />
+    <Compile Include="Entities\DriverTests\TOGO_ValidateCreateTests.cs" />
+    <Compile Include="Entities\PricingPeriodTests\ContainsDateTests.cs" />
+    <Compile Include="Entities\TaskTests\CompleteTests.cs" />
+    <Compile Include="Entities\TaskTests\ValidateCompleteTests.cs" />
+    <Compile Include="Entities\TaskTests\ValidateRaiseTests.cs" />
+    <Compile Include="Entities\TaskTests\RaiseTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusConductor.Domain\BusConductor.Domain.csproj">
+      <Project>{C8A18468-6E53-492A-AF31-52B51F3B4535}</Project>
+      <Name>BusConductor.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

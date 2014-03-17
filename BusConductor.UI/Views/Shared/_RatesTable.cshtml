@@ -1,0 +1,31 @@
+﻿@model BusConductor.UI.ViewModels.Rates.TableViewModel
+
+<div class="rates-table">
+    <table>
+        <tr>
+            <th>
+                2014 prices
+            </th>
+            <th>
+                Weekly rate
+            </th>
+            <th>
+                3 day weekend/4 day week
+            </th>
+        </tr>
+        @foreach (var pricingPeriod in Model.PricingPeriods)
+        {
+            <tr>
+                <td>
+                    @pricingPeriod.PeriodName
+                </td>
+                <td>
+                    £@pricingPeriod.WeekRate.ToString("#.00")
+                </td>
+                <td>
+                    £@pricingPeriod.WeekendAndShortWeekRate.ToString("#.00")
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,167 @@
+﻿@model BusConductor.UI.ViewModels.Booking.ReviewViewModel
+@{
+    ViewBag.Title = "Cool Cat Campers - Review and Confirm Booking";
+}
+<h1>Review and Confirm Booking</h1>
+<div class="booking-review">
+    @using (Html.BeginForm("Confirm", "Booking"))
+    {
+        <fieldset>
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.PickUp)
+            @Html.HiddenFor(model => model.DropOff)
+            @Html.HiddenFor(model => model.Forename)
+            @Html.HiddenFor(model => model.Surname)
+            @Html.HiddenFor(model => model.AddressLine1)
+            @Html.HiddenFor(model => model.AddressLine2)
+            @Html.HiddenFor(model => model.AddressLine1)
+            @Html.HiddenFor(model => model.Town)
+            @Html.HiddenFor(model => model.County)
+            @Html.HiddenFor(model => model.PostCode)
+            @Html.HiddenFor(model => model.Email)
+            @Html.HiddenFor(model => model.TelephoneNumber)
+            @Html.HiddenFor(model => model.IsMainDriver)
+            @Html.HiddenFor(model => model.DrivingLicenceNumber)
+            @Html.HiddenFor(model => model.DriverForename)
+            @Html.HiddenFor(model => model.DriverSurname)
+            @Html.HiddenFor(model => model.NumberOfAdults)
+            @Html.HiddenFor(model => model.NumberOfChildren)
+            @Html.HiddenFor(model => model.VoucherCode)
+            @Html.HiddenFor(model => model.RestrictionsAccepted)
+            @Html.HiddenFor(model => model.TermsAndConditionsAccepted)
+            @Html.HiddenFor(model => model.BusId)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BusName):
+            </div>
+            <div class="editor-field">
+                @Model.BusName
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PickUp):
+            </div>
+            <div class="editor-field">
+                @String.Format("{0:dddd, dd MMMM yyyy}", Model.PickUp)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DropOff):
+            </div>
+            <div class="editor-field">
+                @String.Format("{0:dddd, dd MMMM yyyy}", Model.DropOff)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Forename):
+            </div>
+            <div class="editor-field">
+                @Model.Forename
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Surname):
+            </div>
+            <div class="editor-field">
+                @Model.Surname
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.AddressLine1):
+            </div>
+            <div class="editor-field">
+                @Model.AddressLine1
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.AddressLine2):
+            </div>
+            <div class="editor-field">
+                @Model.AddressLine2
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.AddressLine3):
+            </div>
+            <div class="editor-field">
+                @Model.AddressLine3
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Town):
+            </div>
+            <div class="editor-field">
+                @Model.Town
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.County):
+            </div>
+            <div class="editor-field">
+                @Model.County
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PostCode):
+            </div>
+            <div class="editor-field">
+                @Model.PostCode
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email):
+            </div>
+            <div class="editor-field">
+                @Model.Email
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TelephoneNumber):
+            </div>
+            <div class="editor-field">
+                @Model.TelephoneNumber
+            </div>
+            <!--<div class="editor-label">
+                @Html.LabelFor(model => model.IsMainDriver):
+            </div>
+            <div class="editor-field">
+                @Model.IsMainDriver
+            </div>-->
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DrivingLicenceNumber):
+            </div>
+            <div class="editor-field">
+                @Model.DrivingLicenceNumber
+            </div>
+            @if (!Model.IsMainDriver)
+            {
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DriverForename):
+                </div>
+                <div class="editor-field">
+                    @Model.DriverForename
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DriverSurname):
+                </div>
+                <div class="editor-field">
+                    @Model.DriverSurname
+                </div>
+            }
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NumberOfAdults):
+            </div>
+            <div class="editor-field">
+                @Model.NumberOfAdults
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NumberOfChildren):
+            </div>
+            <div class="editor-field">
+                @Model.NumberOfChildren
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.VoucherCode):
+            </div>
+            <div class="editor-field">
+                @Model.VoucherCode
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TotalCost):
+            </div>
+            <div class="editor-field">
+                £@String.Format("{0:#####0.00}", Model.TotalCost)
+            </div>
+            <p>
+                <input type="submit" value="Confirm booking" />
+            </p>
+        </fieldset>
+    }
+</div>

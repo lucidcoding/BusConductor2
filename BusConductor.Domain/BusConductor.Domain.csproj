@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8A18468-6E53-492A-AF31-52B51F3B4535}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusConductor.Domain</RootNamespace>
+    <AssemblyName>BusConductor.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\IRepository.cs" />
+    <Compile Include="Common\ValidationMessageType.cs" />
+    <Compile Include="Common\ValidationException.cs" />
+    <Compile Include="Common\ValidationMessage.cs" />
+    <Compile Include="Common\ValidationMessageCollection.cs" />
+    <Compile Include="Constants\PermissionIds.cs" />
+    <Compile Include="Entities\Booking.cs" />
+    <Compile Include="Entities\Bus.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Enquiry.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\PermissionRole.cs" />
+    <Compile Include="Entities\PricingPeriod.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\Task.cs" />
+    <Compile Include="Entities\TaskType.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Voucher.cs" />
+    <Compile Include="Enumerations\BookingStatus.cs" />
+    <Compile Include="Enumerations\BusDayBookingStatus.cs" />
+    <Compile Include="Enumerations\DriveSide.cs" />
+    <Compile Include="Enumerations\EnquiryStatus.cs" />
+    <Compile Include="Enumerations\RagStatus.cs" />
+    <Compile Include="Enumerations\TaskStatus.cs" />
+    <Compile Include="ParameterSets\Booking\AdminMakeBookingParameterSet.cs" />
+    <Compile Include="ParameterSets\Booking\CustomerMakeBookingParameterSet.cs" />
+    <Compile Include="ParameterSets\Booking\MakeBookingParameterSet.cs" />
+    <Compile Include="ParameterSets\Bus\EditParameterSet.cs" />
+    <Compile Include="ParameterSets\Bus\EditPricingPeriodParameterSet.cs" />
+    <Compile Include="ParameterSets\Customer\RegisterCustomerParameterSet.cs" />
+    <Compile Include="ParameterSets\Enquiry\MakeParameterSet.cs" />
+    <Compile Include="ParameterSets\PricingPeriod\AddEditParameterSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryContracts\IEnquiryRepository.cs" />
+    <Compile Include="RepositoryContracts\IVoucherRepository.cs" />
+    <Compile Include="RepositoryContracts\ISlotRepository.cs" />
+    <Compile Include="RepositoryContracts\IBookingRepository.cs" />
+    <Compile Include="RepositoryContracts\IBusRepository.cs" />
+    <Compile Include="RepositoryContracts\ITaskTypeRepository.cs" />
+    <Compile Include="RepositoryContracts\ITaskRepository.cs" />
+    <Compile Include="RepositoryContracts\IRoleRepository.cs" />
+    <Compile Include="RepositoryContracts\IUserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DomainServices\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

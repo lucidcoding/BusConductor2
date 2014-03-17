@@ -1,0 +1,50 @@
+﻿@model BusConductor.UI.ViewModels.Availability.IndexViewModel
+<div class="availability-index" id="AvailabilityIndexCalendarPlaceholder">
+    <div class="main-element">
+        @Html.RouteLink("< Ealier", "AvailabilityDisplayFrom", new { startYear = @Model.EarlierStart.Year, startMonth = @Model.EarlierStart.Month, startDay = @Model.EarlierStart.Day }, new { @class = "earlier" })
+        @Html.RouteLink("Later >", "AvailabilityDisplayFrom", new { startYear = @Model.LaterStart.Year, startMonth = @Model.LaterStart.Month, startDay = @Model.LaterStart.Day }, new { @class = "later" })
+        <table>
+            <tr>
+                <th>
+                </th>
+                @foreach (var day in Model.Days)
+                {
+                    <th>
+                        @day.DayName
+                        <br />
+                        @day.MonthName
+                        <br />
+                        @day.DayNumber
+                    </th>
+                }
+            </tr>
+            @foreach (var bus in Model.Busses)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Make", "Booking", new { busId = bus.BusId })">
+                            <img src="@bus.MainImageUrl" alt="@bus.Name" class="record-image"/>
+                            <h2>@bus.Name</h2>
+                        </a>
+                    </td>
+                    @foreach (var day in bus.Days)
+                    {
+                        <td class="@day.AdditionalClass">
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+        @Html.RouteLink("< Ealier", "AvailabilityDisplayFrom", new { startYear = @Model.EarlierStart.Year, startMonth = @Model.EarlierStart.Month, startDay = @Model.EarlierStart.Day }, new { @class = "earlier" })
+        @Html.RouteLink("Later >", "AvailabilityDisplayFrom", new { startYear = @Model.LaterStart.Year, startMonth = @Model.LaterStart.Month, startDay = @Model.LaterStart.Day }, new { @class = "later" })
+        <!--<div class="booking" style="top:52px;left:208px;width:22px;height:50px;"></div>
+            <div class="booking" style="top:103px;left:231px;width:47px;height:50px;"></div>
+            <div class="booking" style="top:154px;left:279px;width:70px;height:50px;"></div>
+            <div class="booking" style="top:205px;left:350px;width:141px;height:50px;"></div>-->
+        <!--<div class="booking" style="top:52px;left:207px;width:22px;height:50px;"></div>
+            <div class="booking" style="top:103px;left:231px;width:47px;height:50px;"></div>
+            <div class="booking" style="top:154px;left:255px;width:70px;height:50px;"></div>
+            <div class="booking" style="top:205px;left:279px;width:141px;height:50px;"></div>
+            <div class="booking" style="top:256px;left:303px;width:141px;height:50px;"></div>-->
+    </div>
+</div>

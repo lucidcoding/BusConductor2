@@ -1,0 +1,22 @@
+﻿@model BusConductor.UI.ViewModels.Booking.IndexViewModel
+
+@{
+    ViewBag.Title = "Cool Cat Campers - Book a Camper";
+}
+
+<h1>Book one of our campers</h1>
+<div class="booking-index">
+    @foreach(var bus in Model.Busses)
+    {
+        <a href="@Url.Action("Make", "Booking", new { busId = bus.BusId })">
+        <div class="record">
+        
+            <h2>@bus.Name</h2>
+            
+            <img src="@bus.MainImageUrl" alt="@bus.Name" class="record-image"/>
+            <p>Click here to book @bus.Name</p>
+        </div>
+        </a>
+    }
+
+</div>

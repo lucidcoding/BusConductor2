@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{343EE9CE-5DC0-4E25-859B-8DCE9AF413D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusConductor.Application</RootNamespace>
+    <AssemblyName>BusConductor.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IBookingService.cs" />
+    <Compile Include="Contracts\IBusService.cs" />
+    <Compile Include="Contracts\IEnquiryService.cs" />
+    <Compile Include="Contracts\ITaskService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Core\ApplicationRegistry.cs" />
+    <Compile Include="Implementations\BookingService.cs" />
+    <Compile Include="Implementations\BusService.cs" />
+    <Compile Include="Implementations\EnquiryService.cs" />
+    <Compile Include="Implementations\TaskService.cs" />
+    <Compile Include="Implementations\UserService.cs" />
+    <Compile Include="ParameterSetMappers\Booking\AdminMakeParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Booking\IAdminMakeParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Booking\ICustomerMakeParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Booking\CustomerMakeParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Bus\EditParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Bus\IEditParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Enquiry\IMakeParameterSetMapper.cs" />
+    <Compile Include="ParameterSetMappers\Enquiry\MakeParameterSetMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\Booking\AdminMakeBookingRequest.cs" />
+    <Compile Include="Requests\Booking\CustomerMakeBookingRequest.cs" />
+    <Compile Include="Requests\Booking\MakeBookingRequest.cs" />
+    <Compile Include="Requests\Bus\EditPricingPeriodRequest.cs" />
+    <Compile Include="Requests\Bus\EditRequest.cs" />
+    <Compile Include="Requests\EditTaskRequest.cs" />
+    <Compile Include="Requests\CreateUserRequest.cs" />
+    <Compile Include="Requests\Enquiry\MakeRequest.cs" />
+    <Compile Include="Requests\RaiseTaskRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusConductor.Data\BusConductor.Data.csproj">
+      <Project>{5A3EB2F3-F49B-4F28-9936-A3A36AEB605B}</Project>
+      <Name>BusConductor.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusConductor.Domain\BusConductor.Domain.csproj">
+      <Project>{C8A18468-6E53-492A-AF31-52B51F3B4535}</Project>
+      <Name>BusConductor.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucidity.Utilities.Contracts\Lucidity.Utilities.Contracts.csproj">
+      <Project>{DF5C253B-FA84-474D-9EB4-AF89EBEFD0AB}</Project>
+      <Name>Lucidity.Utilities.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucidity.Utilities\Lucidity.Utilities.csproj">
+      <Project>{FD59D8EE-9F07-4C43-AD0C-D620177E7A05}</Project>
+      <Name>Lucidity.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

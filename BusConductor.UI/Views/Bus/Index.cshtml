@@ -1,0 +1,29 @@
+﻿@model BusConductor.UI.ViewModels.Bus.IndexViewModel
+@{
+    ViewBag.Title = "Cool Cat Campers - Our Campers";
+}
+<h1>Our Campers</h1>
+<div class="bus-index">
+    @foreach (var bus in Model.Busses)
+    {
+        <div>
+            <a href="@Url.Action("Details", "Bus", new { bus.Id })" >
+                <img src="@bus.MainImageUrl" alt="@bus.Name" class="record-image"/>
+            </a>
+            <img src="/Images/icon-edit-header.png" alt="@bus.Name" class="record-icon"/>
+            <img src="/Images/icon-print-header.png" alt="@bus.Name" class="record-icon"/>
+            <div class="record-text">
+                <a href="@Url.Action("Details", "Bus", new { bus.Name })" >
+                    <h2 class="record-title">@bus.Name</h2>
+                </a>
+                <p class="record-description">@bus.Description</p>
+                <p>
+                    @bus.Overview
+                </p>
+                @Html.RouteLink("Read more about " + bus.Name, "BusDetails", new { bus.Id })
+                @Html.RouteLink("Book " + bus.Name, "BookingMake", new { busId = bus.Id })
+            </div>
+            <hr />
+        </div>
+    }
+</div>

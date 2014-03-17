@@ -1,0 +1,29 @@
+﻿@model BusConductor.UI.ViewModels.Bus.DetailsViewModel
+@{
+    ViewBag.Title = "Cool Cat Campers - " + Model.Name;
+}
+
+@section JavaScript
+{
+    <script src="@Url.Content("~/Scripts/Bus/Details.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Calendar/DisplayMonth.js")" type="text/javascript"></script>
+}
+
+<h1>@Html.DisplayFor(modelItem => Model.Name)</h1>
+<p>
+    @Html.DisplayFor(modelItem => Model.Description)
+</p>
+<p>
+    @Html.DisplayFor(model => model.Overview)
+</p>
+<p>
+    @Html.DisplayFor(model => model.Details)
+</p>
+
+<h2>Availability</h2>
+@Html.Partial("_Calendar", Model.Calendar)
+<h2>Rates</h2>
+@Html.Partial("_RatesTable", Model.RatesTable)
+
+@Html.RouteLink("Book " + Model.Name, "BookingMake", new { busId = Model.Id }, string.Empty)
+

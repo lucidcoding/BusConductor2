@@ -1,0 +1,46 @@
+﻿@model BusConductor.UI.ViewModels.Home.IndexViewModel
+@section Canonical
+{
+    <link rel="canonical" href="http://www.coolcatcampers.co.uk/vw-camper-hire-manchester" />
+}
+@{
+    ViewBag.Title = "Cool Cat Campers - Classic VW Camper Hire in Manchester";
+}
+<h1>
+    Welcome to Cool Cat Campers - Classic VW Camper Hire!</h1>
+<div class="home-index">
+    <img src="../../Content/Images/Bertha02.jpg" alt="Bertha" />
+    <div class="feed">
+        <h2>Latest blog posts</h2>
+        @foreach (var blogPost in Model.BlogPosts)
+        {
+            <h3>
+                <a href="@blogPost.Url" >@blogPost.Title</a>
+                </h3>
+            <p>
+                @blogPost.Content</p>
+        }
+    </div>
+    <h2 class="contact">
+        Call now on 07763 207761 or email us at <a href="mailto:coolcatcampers@outlook.com">
+            coolcatcampers@outlook.com</a></h2>
+    <p>
+        Is there any more iconic and cool way to travel, holiday and explore than in a classic
+        Volkswagen Campervan? If you want a holiday which is less hassle, warmer, drier
+        and more comfortable than a tent and more laid back, funky, quirky and flexible
+        than a hotel or cottage, there is no better way than by hiring a beautiful, unique
+        classic VW camper. With their instantly recognisable classic styling, history and
+        cool reputation they are loved by everyone and always raise a smile. Cool Cat Campers
+        is a small family run rental business based in South Manchester, ideally placed
+        for a short drive to the beautiful Peak District, Lake District, Lancashire Coast
+        or Yorkshire Moors, North Wales and an easy hop to the motorway network to travel
+        further afield.
+    </p>
+    <p>
+        We are Volkswagen enthusiasts, currently owning two campervans ourselves, and we
+        have built this hire business so we can share our love and knowledge of vintage
+        VW’s with you. At the moment we have one camper available to rent, Bertha, so this
+        means we are able to dedicate all of our time to ensuring that she is in great condition
+        and ensuring you have the perfect retro holiday.
+    </p>
+</div>
