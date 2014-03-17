@@ -10,6 +10,7 @@ namespace BusConductor.Domain.Entities
 {
     public class Booking : Entity<Guid>
     {
+        //1
         private string _bookingNumber;
         private Guid _customerId;
         private Customer _customer;
