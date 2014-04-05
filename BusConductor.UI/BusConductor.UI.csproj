@@ -83,6 +83,7 @@
     <Compile Include="Common\StructureMapControllerActivator.cs.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminBookingController.cs" />
+    <Compile Include="Controllers\AdminBusController.cs" />
     <Compile Include="Controllers\AdminEnquiryController.cs" />
     <Compile Include="Controllers\AvailabilityController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
@@ -104,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Misc\CustomMembershipProvider.cs" />
     <Compile Include="ViewModelMappers\AdminBooking\IndexViewModelMapper.cs" />
+    <Compile Include="ViewModelMappers\AdminBooking\MakeViewModelMapper.cs" />
+    <Compile Include="ViewModelMappers\AdminBus\BookingsViewModelMapper.cs" />
+    <Compile Include="ViewModelMappers\AdminBus\IndexViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\Availability\IndexViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\Booking\ReviewViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\Booking\MakeViewModelMapper.cs" />
@@ -113,6 +117,9 @@
     <Compile Include="ViewModelMappers\Rates\TableViewModelMapper.cs" />
     <Compile Include="ViewModels\AdminBooking\IndexViewModel.cs" />
     <Compile Include="ViewModels\AdminBooking\IndexViewModelBooking.cs" />
+    <Compile Include="ViewModels\AdminBus\BookingsViewModel.cs" />
+    <Compile Include="ViewModels\AdminBus\IndexViewModel.cs" />
+    <Compile Include="ViewModels\AdminBus\IndexViewModelBus.cs" />
     <Compile Include="ViewModels\Availability\IndexBusDayViewModel.cs" />
     <Compile Include="ViewModels\Availability\IndexBusViewModel.cs" />
     <Compile Include="ViewModels\Availability\IndexDayViewModel.cs" />
@@ -135,6 +142,7 @@
     <Compile Include="ViewModels\Rates\IndexBusViewModel.cs" />
     <Compile Include="ViewModels\Rates\IndexViewModel.cs" />
     <Compile Include="ViewModels\Rates\TableViewModel.cs" />
+    <Compile Include="ViewModels\AdminBooking\MakeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\Background.gif" />
@@ -351,6 +359,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\AdminBooking\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminBus\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminBus\Bookings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminBooking\Make.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

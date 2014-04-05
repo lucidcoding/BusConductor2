@@ -1,0 +1,28 @@
+﻿@model BusConductor.UI.ViewModels.AdminBus.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    Index</h2>
+<fieldset>
+    <legend>IndexViewModel</legend>
+    <table>
+        <tr>
+            <th>
+                Bus
+            </th>
+        </tr>
+        @foreach (var bus in Model.Busses)
+        {
+            <tr>
+                <td>
+                    @bus.Name
+                </td>
+                <td>
+                    @Html.ActionLink("Bookings", "Bookings", new { busId = bus.BusId })
+                </td>
+            </tr>
+        }
+    </table>
+</fieldset>

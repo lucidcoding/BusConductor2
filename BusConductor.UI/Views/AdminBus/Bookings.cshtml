@@ -1,0 +1,25 @@
+﻿@model BusConductor.UI.ViewModels.AdminBus.BookingsViewModel
+
+@{
+    ViewBag.Title = "Bookings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Bookings</h2>
+
+<fieldset>
+    <legend>Bookings for @Model.BusName</legend>
+
+    @Html.ActionLink("Make Booking", "Make", "AdminBooking", new { busId = Model.BusId }, null)
+
+    @foreach (var month in Model.Months)
+    {
+        <div style="display: inline-block">
+            @Html.Partial("_Calendar", month)
+        </div>
+    }
+
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
