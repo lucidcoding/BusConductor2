@@ -9,13 +9,13 @@ namespace BusConductor.UI.Controllers
     {
         public ActionResult Index()
         {
-            var r = XmlReader.Create("http://coolcatcampers.blogspot.co.uk/atom.xml");
-            var blogFeed = SyndicationFeed.Load(r);
-            r.Close();
+            //var r = XmlReader.Create("http://coolcatcampers.blogspot.co.uk/atom.xml");
+            //var blogFeed = SyndicationFeed.Load(r);
+            //r.Close();
 
-            var viewModel = IndexViewModelMapper.Map(blogFeed);
+            //var viewModel = IndexViewModelMapper.Map(blogFeed);
 
-          
+            var viewModel = IndexViewModelMapper.Map(null);
 
             return View(viewModel);
         }

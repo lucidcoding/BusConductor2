@@ -1,0 +1,1130 @@
+body
+{
+	font-size: .85em;
+	font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+	color: #232323;
+	background-color: #fff;
+}
+
+header, footer, nav, section
+{
+	display: block;
+}
+
+.footer
+{
+    text-align: center;
+}
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset
+{
+	border: 1px solid #5BC0D0; /*padding: 0 1.4em 1.4em 1.4em;*/
+	padding: 20px;
+	margin: 0 0 1.5em 0;
+}
+
+legend
+{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+textarea
+{
+	min-height: 75px;
+}
+
+.editor-label
+{
+	margin-bottom: 20px;
+	width: 100px;
+	float: left;
+	clear: left;
+}
+
+.editor-field
+{
+	margin-bottom: 20px;
+	margin-left: 120px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+	color: #ff0000;
+}
+
+.field-validation-valid
+{
+	display: none;
+}
+
+.input-validation-error
+{
+	border: 1px solid #ff0000;
+	background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.validation-summary-valid
+{
+	display: none;
+}
+
+/* Generic Modifications */
+
+a
+{
+	text-decoration: none;
+	color: #BB4CA3;
+}
+
+a:visited
+{
+	color: #BB4CA3;
+}
+
+/* Layout */
+
+@font-face
+{
+	font-family: "P22-Flora-Mambo";
+	src: url('Fonts/P22FloraMambo.otf'), 
+	url('Fonts/P22FloraMambo.otf'); /* IE */
+}
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+
+
+.menu-bar
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	width: auto;
+	height: auto;
+	text-align: center;
+	list-style: none;
+	background-color: #BB4CA3;
+	clear: left;
+}
+
+.menu-bar ul
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	height: auto;
+	padding: 2px;
+	margin: 0px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.menu-bar li
+{
+	display: inline-block;
+	text-align: center;
+	padding: 5px 13px 5px 13px;
+	color: white;
+	font-family: "P22-Flora-Mambo", P22-Flora-Mambo, P22 Flora Mambo, sans-serif;
+	color: White;
+	font-size: large;
+	vertical-align: middle;
+}
+
+.menu-bar a
+{
+	color: white;
+}
+
+.menu-bar a:visited
+{
+	color: white;
+}
+
+.menu-bar a img
+{
+	border: none 0px;
+}
+
+.header
+{
+	text-align: center;
+	background-color: #ECDA81;
+	height: 251px;
+}
+
+.content
+{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+}
+
+h1
+{
+	color: #5BC0D0;
+	font-family: "P22-Flora-Mambo", P22-Flora-Mambo, P22 Flora Mambo, sans-serif;
+	font-size: xx-large;
+	text-align: center;
+	font-weight:normal;
+}
+
+h2
+{
+	color: #5BC0D0;
+}
+
+h3
+{
+	color: #5BC0D0;
+	font-style: italic;
+}
+
+hr
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #BB4CA3;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.title
+{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	clear: both;
+}
+
+input[type="submit"]
+{
+	background-color: #AEDBDC;
+	border: solid 1px #5BC0D0;
+	height: 21px;
+	margin-left: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: black;
+	cursor: pointer;
+}
+
+button
+{
+	background-color: #AEDBDC;
+	border: solid 1px #5BC0D0;
+	height: 21px;
+	margin-left: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: black;
+	cursor: pointer;
+}
+
+/* AdminBooking.YearPlanner */
+.adminbooking-yearplanner div.month-row
+{
+    display: block; 
+    padding: 0px; 
+    margin: 0px;
+}
+
+.adminbooking-yearplanner div.month-title 
+{
+    display: inline-block; 
+    border-right: 1px solid black; 
+    width: 49px; 
+    max-width: 49px;
+    padding: 0px; 
+    margin: 0px;
+}
+
+.adminbooking-yearplanner div.day
+{
+    display: inline-block; 
+    border-right: 1px solid black; 
+    width: 29px; 
+    max-width: 29px;
+    padding: 0px; 
+    margin: 0px;
+}
+
+.adminbooking-yearplanner div.day.weekend
+{
+    background-color: #dddddd;
+}
+
+/* Home.Index */
+
+.home-index img
+{
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.home-index div.feed
+{
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width: 384px;
+	max-height: 250px;
+	overflow: scroll;
+	border:1px solid #BB4CA3;
+	clear: right;
+	display: block;
+	padding: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+
+.home-index h2.contact
+{
+	font-size:x-large;
+	color: #BB4CA3;
+}
+
+.home-index h2.contact a
+{
+	text-decoration: underline;
+}
+
+.home-index:after
+{
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* Bus.Index */
+
+.bus-index .record
+{
+	/* min-height: 200px;*/
+}
+
+.bus-index .record-text h2
+{
+	margin-top: 0px;
+	clear: none;
+}
+
+p .bus-index .record-description
+{
+	font-style: italic;
+}
+
+.bus-index .record-image
+{
+	float: left;
+	clear: left;
+	margin-bottom: 10px;
+	border: none;
+}
+
+.bus-index .record-text
+{
+	margin-left: 170px;
+}
+
+.bus-index .record-icon
+{
+	margin-top: 0px;
+	float: right;
+}
+
+.bus-index hr
+{
+	clear: left;
+	margin-bottom: 10px;
+}
+
+/* Calendar */
+
+.bc-calendar .month-name
+{
+	vertical-align: middle;
+}
+
+.bc-calendar .previous-month
+{
+	float: left;
+}
+
+.bc-calendar .next-month
+{
+	float: right;
+}
+
+.bc-calendar table
+{
+	padding: 0px;
+	margin: 0px;
+	border-collapse: separate;
+	border-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bc-calendar th
+{
+	border: solid 1px #BB4CA3;
+	background-color: #BB4CA3;
+	color: white;
+	width: 40px;
+	min-width: 30px;
+	height: 10px;
+}
+
+.bc-calendar td
+{
+	text-align: center;
+	border: solid 1px black;
+	padding: 7px;
+	height: 20px;
+}
+
+.bc-calendar td.pending
+{
+	background-color: #5BC0D0;
+}
+
+.bc-calendar td.confirmed
+{
+	background-color: #BB4CA3;
+}
+
+.bc-calendar td.pending-am
+{
+	background: url('Images/PendingAm.gif') no-repeat center;
+}
+
+.bc-calendar td.pending-pm
+{
+	background: url('Images/PendingPm.gif') no-repeat center;
+}
+
+.bc-calendar td.pending-am-pending-pm
+{
+	background-color: #5BC0D0;
+}
+
+.bc-calendar td.confirmed-am
+{
+	background: url('Images/ConfirmedAm.gif') no-repeat center;
+}
+
+.bc-calendar td.confirmed-pm
+{
+	background: url('Images/ConfirmedPm.gif') no-repeat center;
+}
+
+.bc-calendar td.confirmed-am-confirmed-pm
+{
+	background-color: #BB4CA3;
+}
+
+.bc-calendar td.confirmed-am-pending-pm
+{
+	background: url('Images/PendingAmConfirmedPm.gif') no-repeat center;
+}
+
+.bc-calendar td.confirmed-am-confirmed-pm
+{
+	background: url('Images/ConfirmedAmPendingPm.gif') no-repeat center;
+}
+
+/* Availability */
+
+.availability-index
+{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.availability-index .main-element
+{
+	position: relative;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+}
+
+/*.availability-index .booking {
+    position: absolute;
+    background-color: #BB4CA3;
+}*/
+
+.availability-index .earlier
+{
+	float: left;
+	margin-bottom: 10px;
+}
+
+.availability-index .later
+{
+	float: right;
+	margin-bottom: 10px;
+}
+
+.availability-index table
+{
+	padding: 0px;
+	margin: 0px;
+	border-collapse: separate;
+	border-spacing: 1px;
+	width: 800px;
+	table-layout: fixed;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.availability-index table th
+{
+	padding: 0px;
+	background-color: #BB4CA3;
+	color: white;
+	width: 22px;
+	height: 50px;
+	font-weight: normal;
+	font-size: x-small;
+}
+
+.availability-index table th:first-child
+{
+	width: 200px;
+}
+
+.availability-index table td
+{
+	background-color: #AEDBDC;
+	padding: 0px;
+	width: 22px;
+	vertical-align: baseline;
+}
+
+.availability-index table td.change-over-day
+{
+	background-color: #5BC0D0;
+}
+
+.availability-index table td.booked
+{
+	background-color: #BB4CA3;
+}
+
+.availability-index table td:first-child
+{
+	width: 123px;
+	padding: 15px;
+	background-color: #AEDBDC;
+}
+
+.availability-index table h2
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display: inline;
+	color: white;
+	vertical-align: middle;
+}
+
+.availability-index img.record-image
+{
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+}
+
+
+.availability-index a img
+{
+	border-style: none;
+}
+
+/*Rates */
+
+/*.bus-index .record
+{
+    min-height: 200px;
+}*/
+
+.rates-index
+{
+	text-align: center;
+}
+
+.rates-index .record
+{
+	text-align: left;
+	display: inline-block;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.rates-index a img
+{
+	border-style: none;
+}
+
+.rates-index .record-image
+{
+	float: left;
+	clear: left;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.rates-index .record-text
+{
+	margin-left: 170px;
+}
+
+.rates-index .record h2
+{
+	margin-top: 0px;
+	clear: none;
+}
+
+/*
+.rates-index table
+{
+    border-collapse: separate;
+    border-spacing: 1px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.rates-index th
+{
+    background-color: #438887;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.rates-index th .sub-heading
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+.rates-index td
+{
+    background-color: lightgray;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.rates-index tr:first-child td:first-child
+{
+    background-color: white;
+}
+
+
+.rates-index td:first-child 
+{
+    border-left: solid 1px black;
+}*/
+
+
+.rates-index hr
+{
+	clear: left;
+	margin-bottom: 10px;
+}
+
+/* Booking.Index */
+
+.booking-index
+{
+	text-align: center;
+}
+
+.booking-index .record
+{
+	width: 150px;
+	max-width: 150px;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	text-align: center;
+}
+
+.booking-index a img
+{
+	border-style: none;
+}
+
+/* Booking.Make */
+
+.booking-make
+{
+	text-align: center;
+	vertical-align: top;
+}
+
+/* only need this if floating calendar and form right
+
+.booking-make:after
+{
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}*/
+
+.booking-make .intro
+{
+	text-align: left;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.booking-make div.bc-calendar
+{
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 30px;
+}
+
+.booking-make form
+{
+	text-align: left;
+	display: inline-block; /*width: auto;*/
+	vertical-align: top;
+}
+
+/*.booking-make form fieldset
+{
+    padding: 20px;
+}*/
+
+.booking-make .alternate-driver.hide
+{
+	display: none;
+}
+
+.booking-make .editor-label
+{
+	/*margin-bottom: 15px;*/
+	width: 180px;
+	height: 35px;
+	float: left;
+	clear: left;
+}
+
+.booking-make .editor-label.double-height
+{
+	height: 70px;
+}
+
+.booking-make .required
+{
+	color: #BB4CA3;
+	font-weight: bold;
+}
+
+.booking-make .editor-field
+{
+	/*margin-bottom: 15px;*/
+	height: 35px;
+	margin-left: 200px;
+	width: 250px;
+}
+
+.booking-make .editor-field.double-height
+{
+	height: 70px;
+}
+
+.booking-make .editor-field input[type="text"]
+{
+	width: 250px;
+}
+
+.booking-make .editor-field input[type="text"].hasDatepicker
+{
+	width: 100px;
+}
+
+.booking-make .field-validation-error
+{
+	color: #ff0000;
+	display: block;
+}
+
+.booking-make .validation-summary-errors
+{
+	margin-bottom: 30px;
+	max-width: 400px;
+}
+
+.booking-make button.ui-datepicker-trigger
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	vertical-align: top;
+	height: 21px;
+	margin-left: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.booking-make button.ui-datepicker-trigger img
+{
+	vertical-align: bottom;
+}
+
+/* Booking.Review */
+
+.booking-review
+{
+	text-align: center;
+}
+
+.booking-review form
+{
+	display: inline-block;
+	text-align: left;
+}
+
+.booking-review .alternate-driver.hide
+{
+	display: none;
+}
+
+.booking-review .editor-label
+{
+	width: 220px;
+	height: 15px;
+	float: left;
+	clear: left;
+}
+
+.booking-review .editor-field
+{
+	height: 15px;
+	margin-left: 240px;
+	width: 250px;
+	font-weight: bold;
+}
+
+/* Enquiry.Make */
+
+.enquiry-make
+{
+	text-align: center;
+	vertical-align: top;
+}
+
+.enquiry-make .intro
+{
+	text-align: left;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.enquiry-make div.bc-calendar
+{
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 30px;
+}
+
+.enquiry-make form
+{
+	text-align: left;
+	display: inline-block; /*width: auto;*/
+	vertical-align: top;
+}
+
+.enquiry-make .alternate-driver.hide
+{
+	display: none;
+}
+
+.enquiry-make .editor-label
+{
+	/*margin-bottom: 15px;*/
+	width: 180px;
+	height: 35px;
+	float: left;
+	clear: left;
+}
+
+.enquiry-make .editor-label.double-height
+{
+	height: 70px;
+}
+
+.enquiry-make .required
+{
+	color: #BB4CA3;
+	font-weight: bold;
+}
+
+.enquiry-make .editor-field
+{
+	/*margin-bottom: 15px;*/
+	height: 35px;
+	margin-left: 200px;
+	width: 250px;
+}
+
+.enquiry-make .editor-field.double-height
+{
+	height: 70px;
+}
+
+.enquiry-make .editor-field input[type="text"]
+{
+	width: 250px;
+}
+
+.enquiry-make .editor-field input[type="text"].hasDatepicker
+{
+	width: 100px;
+}
+
+.enquiry-make .field-validation-error
+{
+	color: #ff0000;
+	display: block;
+}
+
+.enquiry-make .validation-summary-errors
+{
+	margin-bottom: 30px;
+	max-width: 400px;
+}
+
+.enquiry-make button.ui-datepicker-trigger
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	vertical-align: top;
+	height: 21px;
+	margin-left: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.enquiry-make button.ui-datepicker-trigger img
+{
+	vertical-align: bottom;
+}
+
+/* Contact Us */
+
+.contact-index
+{
+	text-align: center;
+}
+
+.contact-index .main-inner
+{
+	display: inline-block;
+}
+
+.contact-index .map
+{
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+}
+
+.contact-index .details
+{
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.contact-index .details-headings
+{
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.contact-index .details-content
+{
+	margin-left: 120px;
+	margin-bottom: 20px;
+}
+
+/* Information.Bertha */
+
+.information-bertha
+{
+	text-align: center;
+}
+
+.information-bertha img
+{
+	display: inline-block;
+	margin: 20px 10px 20px 10px;
+}
+
+.information-bertha p
+{
+	text-align: left;
+}
+
+/*.information-bertha:after
+{
+    content: " ";
+    display: block;
+    height: 20px;
+    clear: both;
+}*.
+
+/* Information.Tariff */
+
+.information-tariff
+{
+	text-align: center;
+}
+
+/* Information.HolidaysAndFestivals */
+
+.information-holidays-and-festivals
+{
+	text-align: center;
+}
+
+.information-holidays-and-festivals img
+{
+	display: inline-block;
+	margin: 20px 10px 20px 10px;
+}
+
+.information-holidays-and-festivals p
+{
+	text-align: left;
+}
+
+
+/* Information.Tariff */
+
+.information-tariff table
+{
+	border-collapse: separate;
+	border-spacing: 1px;
+	table-layout: fixed;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.information-tariff th
+{
+	background-color: #BB4CA3;
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.information-tariff td
+{
+	background-color: #AEDBDC;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+/* Information.ContactUs */
+
+.information-contact-us
+{
+	text-align: center;
+}
+
+.information-contact-us img
+{
+	margin: 20px 10px 20px 10px;
+}
+
+/* Rates.Table */
+
+.rates-table table
+{
+	border-collapse: separate;
+	border-spacing: 1px;
+	table-layout: fixed;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.rates-table th
+{
+	background-color: #BB4CA3;
+	text-align: center;
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.rates-table td
+{
+	background-color: #AEDBDC;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+

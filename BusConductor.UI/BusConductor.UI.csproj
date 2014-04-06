@@ -149,6 +149,7 @@
     <Compile Include="ViewModels\AdminBooking\MakeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminSite.css" />
     <Content Include="Content\Images\Background.gif" />
     <Content Include="Content\Images\Bertha02.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

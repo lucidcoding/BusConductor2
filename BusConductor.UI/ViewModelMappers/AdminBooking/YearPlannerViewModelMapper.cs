@@ -19,15 +19,36 @@ namespace BusConductor.UI.ViewModelMappers.AdminBooking
             for (int monthIndex = 1; monthIndex <= 12; monthIndex ++)
             {
                 var viewModelMonth = new YearPlannerViewModelMonth();
-                var firstDayOfMonth = new DateTime(year, monthIndex, 1);
-                var firstDayOfFirstWeekOfMonth = DateHelper.GetFirstDayOfFirstPartWeekOfMonth(year, monthIndex);
-                viewModelMonth.Name = firstDayOfMonth.ToString("MMMM", CultureInfo.InvariantCulture);
+                //var firstDayOfMonth = new DateTime(year, monthIndex, 1);
+                //var firstDayOfFirstWeekOfMonth = DateHelper.GetFirstDayOfFirstPartWeekOfMonth(year, monthIndex);
+                //viewModelMonth.Name = firstDayOfMonth.ToString("MMMM", CultureInfo.InvariantCulture);
                 viewModelMonth.Days = new List<YearPlannerViewModelDay>();
 
-                for (var date = firstDayOfFirstWeekOfMonth; date < firstDayOfMonth.AddMonths(1); date = date.AddDays(1))
+                //for (var date = firstDayOfFirstWeekOfMonth; date < firstDayOfMonth.AddMonths(1); date = date.AddDays(1))
+                //{
+                //    var viewModelDay = new YearPlannerViewModelDay();
+                //    viewModelDay.Date = date;
+
+                //    if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                //    {
+                //        viewModelDay.AdditionalClass = "weekend";
+                //    }
+
+                //    viewModelMonth.Days.Add(viewModelDay);
+                //}
+
+                viewModelMonth.Name = new DateTime(year, monthIndex, 1).ToString("MMMM");
+
+                for (var date = new DateTime(year, monthIndex, 1); date < new DateTime(year, monthIndex, 1).AddMonths(1); date = date.AddDays(1))
                 {
                     var viewModelDay = new YearPlannerViewModelDay();
                     viewModelDay.Date = date;
+
+                    if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        viewModelDay.AdditionalClass = "weekend";
+                    }
+
                     viewModelMonth.Days.Add(viewModelDay);
                 }
 
