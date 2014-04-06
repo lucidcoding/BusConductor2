@@ -1,0 +1,27 @@
+﻿@model BusConductor.UI.ViewModels.AdminBooking.YearPlannerViewModel
+
+@{
+    ViewBag.Title = "YearPlanner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YearPlanner</h2>
+
+<table>
+
+    @foreach (var month in Model.Months)
+    {
+        <tr>
+            <th>
+                @month.Name
+            </th>
+            @foreach (var day in month.Days)
+            {
+                <td>
+                    @day.Date.ToString("ddd, dd")
+                </td>
+            }
+            
+        </tr>
+    }
+</table>

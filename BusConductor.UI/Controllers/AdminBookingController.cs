@@ -8,6 +8,7 @@ using BusConductor.UI.ViewModels.AdminBooking;
 using BusConductor.UI.ActionFilters;
 using BusConductor.UI.ViewModelMappers.AdminBooking;
 using BusConductor.Domain.RepositoryContracts;
+using BusConductor.Domain.Enumerations;
 
 namespace BusConductor.UI.Controllers
 {
@@ -31,6 +32,14 @@ namespace BusConductor.UI.Controllers
         }
 
         [EntityFrameworkReadContext]
+        public ActionResult YearPlanner()
+        {
+            var busses = _busRepository.GetAll();
+            var viewModel = YearPlannerViewModelMapper.Map(busses, 2014);
+            return View(viewModel);
+        }
+
+        [EntityFrameworkReadContext]
         public ActionResult Make(Guid busId)
         {
             var viewModel = new MakeViewModel();
@@ -42,6 +51,8 @@ namespace BusConductor.UI.Controllers
         [EntityFrameworkWriteContext]
         public ActionResult Make(MakeViewModel viewModel)
         {
+            viewModel.Status = BookingStatus.Confirmed;
+
             var request = MakeViewModelMapper.Map(viewModel);
             var validationMessages = _bookingService.ValidateAdminMake(request);
             validationMessages.ForEach(validationMessage => ModelState.AddModelError(validationMessage.Field, validationMessage.Text));
@@ -52,6 +63,8 @@ namespace BusConductor.UI.Controllers
                 //MakeViewModelMapper.Hydrate(inViewModel, bus);
                 return View("Make", viewModel);
             }
+
+            var booking = _bookingService.AdminMake(request);
 
             //var booking = _bookingService.SummarizeCustomerMake(request);
             //var outViewModel = ReviewViewModelMapper.Map(booking);

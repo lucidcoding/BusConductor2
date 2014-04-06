@@ -106,6 +106,7 @@
     <Compile Include="Misc\CustomMembershipProvider.cs" />
     <Compile Include="ViewModelMappers\AdminBooking\IndexViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\AdminBooking\MakeViewModelMapper.cs" />
+    <Compile Include="ViewModelMappers\AdminBooking\YearPlannerViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\AdminBus\BookingsViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\AdminBus\IndexViewModelMapper.cs" />
     <Compile Include="ViewModelMappers\Availability\IndexViewModelMapper.cs" />
@@ -117,6 +118,9 @@
     <Compile Include="ViewModelMappers\Rates\TableViewModelMapper.cs" />
     <Compile Include="ViewModels\AdminBooking\IndexViewModel.cs" />
     <Compile Include="ViewModels\AdminBooking\IndexViewModelBooking.cs" />
+    <Compile Include="ViewModels\AdminBooking\YearPlannerViewModel.cs" />
+    <Compile Include="ViewModels\AdminBooking\YearPlannerViewModelDay.cs" />
+    <Compile Include="ViewModels\AdminBooking\YearPlannerViewModelMonth.cs" />
     <Compile Include="ViewModels\AdminBus\BookingsViewModel.cs" />
     <Compile Include="ViewModels\AdminBus\IndexViewModel.cs" />
     <Compile Include="ViewModels\AdminBus\IndexViewModelBus.cs" />
@@ -202,6 +206,7 @@
     <Content Include="Images\icon-edit-header.png" />
     <Content Include="Images\icon-print-header.png" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\AdminBooking\Make.js" />
     <Content Include="Scripts\Availability\Index.js" />
     <Content Include="Scripts\Booking\Make.js" />
     <Content Include="Scripts\BusConductor.js" />
@@ -371,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\AdminBooking\Make.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminBooking\YearPlanner.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
